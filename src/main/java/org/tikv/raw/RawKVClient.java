@@ -55,7 +55,8 @@ public class RawKVClient implements AutoCloseable {
   private static final int RAW_BATCH_PUT_SIZE = 16 * 1024;
   private static final int RAW_BATCH_PAIR_COUNT = 512;
 
-  private static final TiKVException ERR_RETRY_LIMIT_EXCEEDED = new GrpcException("retry is exhausted. retry exceeds " + MAX_RETRY_LIMIT + "attempts");
+  private static final TiKVException ERR_RETRY_LIMIT_EXCEEDED =
+      new GrpcException("retry is exhausted. retry exceeds " + MAX_RETRY_LIMIT + "attempts");
   private static final TiKVException ERR_MAX_SCAN_LIMIT_EXCEEDED =
       new TiKVException("limit should be less than MAX_RAW_SCAN_LIMIT");
 

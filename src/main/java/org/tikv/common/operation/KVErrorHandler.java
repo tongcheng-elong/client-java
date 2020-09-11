@@ -112,7 +112,8 @@ public class KVErrorHandler<RespT> implements ErrorHandler<RespT> {
           logger.info(
               String.format(
                   "Received zero store id, from region %d try next time", ctxRegion.getId()));
-          backOffer.doBackOff(BackOffFunction.BackOffFuncType.BoRegionMiss, new GrpcException(error.toString()));
+          backOffer.doBackOff(
+              BackOffFunction.BackOffFuncType.BoRegionMiss, new GrpcException(error.toString()));
         }
         return retry;
       } else if (error.hasStoreNotMatch()) {
