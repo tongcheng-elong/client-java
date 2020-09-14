@@ -331,6 +331,28 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <repositoryId>mvn-wireless-bigdata-release</repositoryId>
+                    <file>target/tikv-client-java-${parent.version}.jar</file>
+                    <url>http://nexus.17usoft.com/repository/mvn-wireless-bigdata-release/</url>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>mvn-wireless-bigdata-release</id>
+            <name>mvn-wireless-bigdata-release</name>
+            <url>http://nexus.17usoft.com/repository/mvn-wireless-bigdata-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>mvn-wireless-bigdata-snapshot</id>
+            <name>mvn-wireless-bigdata-snapshot</name>
+            <url>http://nexus.17usoft.com/repository/mvn-wireless-bigdata-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
